@@ -1,9 +1,9 @@
 // src/components/AllocationDashboard.jsx
-import React, { useState, useMemo, useRef } from "react";
-import Papa from "papaparse";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import React, { useState, useMemo, useRef } from "https://esm.sh/react";
+import Papa from "https://esm.sh/papaparse";
+import { Card, CardHeader, CardTitle, CardContent } from "./ui/card.jsx";
+import { Button } from "./ui/button.jsx";
+import { Input } from "./ui/input.jsx";
 import {
   BarChart,
   Bar,
@@ -14,10 +14,10 @@ import {
   Legend,
   CartesianGrid,
   Brush
-} from "recharts";
-import { FileUp, AlertCircle, Download } from "lucide-react";
-import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+} from "https://esm.sh/recharts?bundle";
+import { FileUp, AlertCircle, Download } from "https://esm.sh/lucide-react";
+import { Select, SelectTrigger, SelectContent, SelectItem } from "./ui/select.jsx";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog.jsx";
 
 /* UTILITIES */
 const groupSum = (rows, keyFn, valFn = r => +r.units) => {
