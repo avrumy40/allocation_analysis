@@ -105,7 +105,9 @@ export default function AllocationDashboard() {
     const sortArr = (arr, dir) => [...arr].sort((a, b) => dir === "asc" ? a.total - b.total : b.total - a.total);
 
     // distributions sorted by key (units) ascending
-    const rawDist = groupCount(rows, r => +r.units)
+    const rawDist = (distView === 'sku'
+      ? groupCount(rows, r => +r.units)
+      : groupCount(prod, p => p.total))
       .sort((a, b) => +a.key - +b.key);
 
     // summary stats
@@ -140,7 +142,7 @@ export default function AllocationDashboard() {
       zeroProd,
       gapData
     };
-  }, [rows]);
+  }, [rows, distView]);
 
   /* UI HELPERS */
   const opts = ["5", "10", "20", "50", "All"];
